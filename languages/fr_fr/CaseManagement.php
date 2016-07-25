@@ -9,13 +9,19 @@
  ************************************************************************************/
 
 $languageStrings = array(
-	'CaseManagement' => 'La Gestion des Cas',
-	'SINGLE_CaseManagement' => 'La Gestion des Cas',
-	'LBL_BLOCK_GENERAL_INFORMATION' => '',
-	'LBL_BLOCK_SYSTEM_INFORMATION' => '',
+	'CaseManagement' => 'Cas',
+	'SINGLE_CaseManagement' => 'Cas',
+	'General Information' => '',
+	'System Information' => '',
 	'LBL_CASE_NUMBER' => 'Nom du Cas',
 	'LBL_CLIENT' => 'Client',
+	'LBL_CASE_STATUS' => 'Statut du Cas',
 	'LBL_CASE_OPENED' => 'Date Affaire Ouverte',
+	'LBL_SUBJECT' => 'Subject',
+	'View History' => '',
+	'RELATED_SUBJECTS' => 'Sujets Connexes',
+	'LBL_BLOCK_GENERAL_INFORMATION' => '',
+	'LBL_BLOCK_SYSTEM_INFORMATION' => '',
 
 );
 
