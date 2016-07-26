@@ -35,30 +35,34 @@ class CaseManagement extends Vtiger_CRMEntity {
 	/**
 	 * Mandatory for Listing (Related listview)
 	 */
-	var $list_fields = Array (
+	var $list_fields = array (
 		'LBL_CASE_NUMBER' => array('casemanagement', 'case_number'),
+		'LBL_CASE_STATUS' => array('casemanagement', 'case_status'),
 		'LBL_CASE_OPENED' => array('casemanagement', 'case_opened'),
+		'LBL_SUBJECT' => array('casemanagement', 'subject'),
 
-	);
-	var $list_fields_name = Array (
+);
+	var $list_fields_name = array (
 		'LBL_CASE_NUMBER' => 'case_number',
+		'LBL_CASE_STATUS' => 'case_status',
 		'LBL_CASE_OPENED' => 'case_opened',
+		'LBL_SUBJECT' => 'subject',
 
-	);
+);
 
 	// Make the field link to detail view
 	var $list_link_field = 'case_number';
 
 	// For Popup listview and UI type support
-	var $search_fields = Array(
+	var $search_fields = array (
 
-	);
-	var $search_fields_name = Array (
+);
+	var $search_fields_name = array (
 
-	);
+);
 
 	// For Popup window record selection
-	var $popup_fields = Array ('case_number');
+	var $popup_fields = array('case_number');
 
 	// For Alphabetical search
 	var $def_basicsearch_col = 'case_number';
@@ -68,7 +72,7 @@ class CaseManagement extends Vtiger_CRMEntity {
 
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('case_number','assigned_user_id');
+	var $mandatory_fields = array('createdtime', 'modifiedtime', 'case_number');
 
 	var $default_order_by = 'case_number';
 	var $default_sort_order='ASC';
