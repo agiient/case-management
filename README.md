@@ -2,7 +2,7 @@
 A Case Management Module for VTiger.
 
 Bugs 1.0.0
-
+----------
 bb LBL_MY HOME PAGE under All menu.
 ss need to give a title to menu item.
 
@@ -10,12 +10,12 @@ bb LBL_BLOCK_GENERAL_INFORMATION and LBL_BLOCK_SYSTEM_INFORMATION under Case Man
 ss need to give a title to menu items.
 
 Requests 1.0.0
-
+--------------
 Make 'Date Case Opened' field auto populate with date and time if possible.
 Change Subtitle to 'Case' from 'Case Managment' so that when a record is added on the front it is grammatically correct.
---------------------------------------------------------------
-Change Log 1.0.1
 
+Change Log 1.0.1
+----------------
 From the Module Designer:
 
 Under 'General' tab;
