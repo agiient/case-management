@@ -37,16 +37,20 @@ class CaseManagement extends Vtiger_CRMEntity {
 	 */
 	var $list_fields = array (
 		'LBL_CASE_NUMBER' => array('casemanagement', 'case_number'),
+		'LBL_CLIENT' => array('casemanagement', 'client'),
+		'LBL_SUBJECT' => array('casemanagement', 'subject'),
 		'LBL_CASE_STATUS' => array('casemanagement', 'case_status'),
 		'LBL_CASE_OPENED' => array('casemanagement', 'case_opened'),
-		'LBL_SUBJECT' => array('casemanagement', 'subject'),
+		'LBL_RELATED_CASES' => array('casemanagement', 'related_cases'),
 
 );
 	var $list_fields_name = array (
 		'LBL_CASE_NUMBER' => 'case_number',
+		'LBL_CLIENT' => 'client',
+		'LBL_SUBJECT' => 'subject',
 		'LBL_CASE_STATUS' => 'case_status',
 		'LBL_CASE_OPENED' => 'case_opened',
-		'LBL_SUBJECT' => 'subject',
+		'LBL_RELATED_CASES' => 'related_cases',
 
 );
 

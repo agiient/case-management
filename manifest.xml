@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <module>
-<exporttime>2016-07-25 18:12:16</exporttime>
+<exporttime>2016-07-26 04:54:34</exporttime>
 <name>CaseManagement</name>
 <label>CaseManagement</label>
-<parent>Tools</parent>
-<version>1.0.1</version>
+<parent>My Home Page</parent>
+<version>1.0.2</version>
 <dependencies>
 <vtiger_version>6.0.0</vtiger_version>
 </dependencies>
@@ -13,11 +13,12 @@
 <name>vtiger_casemanagement</name>
 <sql><![CDATA[CREATE TABLE `vtiger_casemanagement` (
     `casemanagementid` int(11) NOT NULL DEFAULT '0',
-      `case_number` VARCHAR(32) DEFAULT NULL,
-    `client` INT(19) DEFAULT NULL,
+      `related_cases` INT(19) DEFAULT NULL,
+    `case_number` VARCHAR(32) DEFAULT NULL,
     `subject` INT(19) DEFAULT NULL,
-    `case_status` VARCHAR(32) DEFAULT NULL,
     `case_opened` DATE DEFAULT NULL,
+    `client` INT(19) DEFAULT NULL,
+    `case_status` VARCHAR(128) DEFAULT NULL,
       PRIMARY KEY (`casemanagementid`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
 </table>
@@ -31,13 +32,13 @@
 </tables>
 <blocks>
 <block>
-<label>General Information</label>
+<label>LBL_BLOCK_GENERAL_INFORMATION</label>
 <sequence>1</sequence>
 <show_title>0</show_title>
 <visible>0</visible>
 <create_view>0</create_view>
-<edit_view>0</edit_view>
-<detail_view>0</detail_view>
+<edit_view>1</edit_view>
+<detail_view>1</detail_view>
 <display_status>0</display_status>
 <iscustom>0</iscustom>
 <islist>0</islist>
@@ -69,30 +70,6 @@
 </entityidentifier>
 </field>
 <field>
-<fieldname>client</fieldname>
-<uitype>10</uitype>
-<columnname>client</columnname>
-<columntype>INT(19)</columntype>
-<tablename>vtiger_casemanagement</tablename>
-<generatedtype>1</generatedtype>
-<fieldlabel>LBL_CLIENT</fieldlabel>
-<readonly>1</readonly>
-<presence>2</presence>
-<defaultvalue></defaultvalue>
-<sequence>3</sequence>
-<maximumlength>100</maximumlength>
-<typeofdata>V~M</typeofdata>
-<quickcreate>1</quickcreate>
-<quickcreatesequence></quickcreatesequence>
-<displaytype>1</displaytype>
-<info_type>BAS</info_type>
-<helpinfo><![CDATA[]]></helpinfo>
-<masseditable>1</masseditable>
-<relatedmodules>
-<relatedmodule>Contacts</relatedmodule>
-</relatedmodules>
-</field>
-<field>
 <fieldname>subject</fieldname>
 <uitype>10</uitype>
 <columnname>subject</columnname>
@@ -103,7 +80,7 @@
 <readonly>1</readonly>
 <presence>2</presence>
 <defaultvalue></defaultvalue>
-<sequence>4</sequence>
+<sequence>2</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>V~O</typeofdata>
 <quickcreate>0</quickcreate>
@@ -117,10 +94,55 @@
 </relatedmodules>
 </field>
 <field>
+<fieldname>case_opened</fieldname>
+<uitype>5</uitype>
+<columnname>case_opened</columnname>
+<columntype>DATE</columntype>
+<tablename>vtiger_casemanagement</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>LBL_CASE_OPENED</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue></defaultvalue>
+<sequence>3</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>D~M</typeofdata>
+<quickcreate>0</quickcreate>
+<quickcreatesequence></quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>0</masseditable>
+</field>
+<field>
+<fieldname>client</fieldname>
+<uitype>10</uitype>
+<columnname>client</columnname>
+<columntype>INT(19)</columntype>
+<tablename>vtiger_casemanagement</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>LBL_CLIENT</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue></defaultvalue>
+<sequence>4</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>V~M</typeofdata>
+<quickcreate>0</quickcreate>
+<quickcreatesequence></quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>1</masseditable>
+<relatedmodules>
+<relatedmodule>Contacts</relatedmodule>
+</relatedmodules>
+</field>
+<field>
 <fieldname>case_status</fieldname>
 <uitype>16</uitype>
 <columnname>case_status</columnname>
-<columntype>VARCHAR(32)</columntype>
+<columntype>VARCHAR(128)</columntype>
 <tablename>vtiger_casemanagement</tablename>
 <generatedtype>1</generatedtype>
 <fieldlabel>LBL_CASE_STATUS</fieldlabel>
@@ -130,7 +152,7 @@
 <sequence>5</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>V~M</typeofdata>
-<quickcreate>0</quickcreate>
+<quickcreate>1</quickcreate>
 <quickcreatesequence></quickcreatesequence>
 <displaytype>1</displaytype>
 <info_type>BAS</info_type>
@@ -144,37 +166,16 @@
 <picklistvalue>Closed (Defaulted)</picklistvalue>
 </picklistvalues>
 </field>
-<field>
-<fieldname>case_opened</fieldname>
-<uitype>5</uitype>
-<columnname>case_opened</columnname>
-<columntype>DATE</columntype>
-<tablename>vtiger_casemanagement</tablename>
-<generatedtype>2</generatedtype>
-<fieldlabel>LBL_CASE_OPENED</fieldlabel>
-<readonly>1</readonly>
-<presence>2</presence>
-<defaultvalue></defaultvalue>
-<sequence>5</sequence>
-<maximumlength>100</maximumlength>
-<typeofdata>D~M</typeofdata>
-<quickcreate>1</quickcreate>
-<quickcreatesequence></quickcreatesequence>
-<displaytype>1</displaytype>
-<info_type>BAS</info_type>
-<helpinfo><![CDATA[]]></helpinfo>
-<masseditable>0</masseditable>
-</field>
 </fields>
 </block>
 <block>
-<label>System Information</label>
+<label>LBL_BLOCK_SYSTEM_INFORMATION</label>
 <sequence>2</sequence>
 <show_title>0</show_title>
 <visible>0</visible>
 <create_view>0</create_view>
-<edit_view>0</edit_view>
-<detail_view>0</detail_view>
+<edit_view>1</edit_view>
+<detail_view>1</detail_view>
 <display_status>0</display_status>
 <iscustom>0</iscustom>
 <islist>0</islist>
@@ -244,6 +245,48 @@
 </field>
 </fields>
 </block>
+<block>
+<label>LBL_BLOCK_OTHER_CASES</label>
+<sequence>3</sequence>
+<show_title>1</show_title>
+<visible>1</visible>
+<create_view>0</create_view>
+<edit_view>0</edit_view>
+<detail_view>0</detail_view>
+<display_status>1</display_status>
+<iscustom>0</iscustom>
+<islist>0</islist>
+<fields>
+<field>
+<fieldname>related_cases</fieldname>
+<uitype>10</uitype>
+<columnname>related_cases</columnname>
+<columntype>INT(19)</columntype>
+<tablename>vtiger_casemanagement</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>LBL_RELATED_CASES</fieldlabel>
+<readonly>1</readonly>
+<presence>2</presence>
+<defaultvalue>No Related Cases</defaultvalue>
+<sequence>1</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>V~O</typeofdata>
+<quickcreate>1</quickcreate>
+<quickcreatesequence></quickcreatesequence>
+<displaytype>1</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>1</masseditable>
+<relatedmodules>
+<relatedmodule>CaseManagement</relatedmodule>
+<relatedmodule>CaseManagement</relatedmodule>
+<relatedmodule>CaseManagement</relatedmodule>
+<relatedmodule>CaseManagement</relatedmodule>
+<relatedmodule>CaseManagement</relatedmodule>
+</relatedmodules>
+</field>
+</fields>
+</block>
 </blocks>
 <customviews>
 <customview>
@@ -260,16 +303,20 @@
 <columnindex>2</columnindex>
 </field>
 <field>
-<fieldname>case_opened</fieldname>
+<fieldname>client</fieldname>
 <columnindex>3</columnindex>
 </field>
 <field>
-<fieldname>client</fieldname>
+<fieldname>subject</fieldname>
 <columnindex>4</columnindex>
 </field>
 <field>
-<fieldname>subject</fieldname>
+<fieldname>case_opened</fieldname>
 <columnindex>5</columnindex>
+</field>
+<field>
+<fieldname>related_cases</fieldname>
+<columnindex>6</columnindex>
 </field>
 </fields>
 </customview>
@@ -284,9 +331,9 @@
 <linkurl><![CDATA[javascript:ModTrackerCommon.showhistory('$RECORD$')]]></linkurl>
 <linkicon><![CDATA[]]></linkicon>
 <sequence>1</sequence>
-<handler_path><![CDATA[modules/ModTracker/ModTracker.php]]></handler_path>
-<handler_class><![CDATA[ModTracker]]></handler_class>
-<handler><![CDATA[isViewPermitted]]></handler>
+<handler_path><![CDATA[]]></handler_path>
+<handler_class><![CDATA[]]></handler_class>
+<handler><![CDATA[]]></handler>
 </customlink>
 </customlinks>
 <actions>

@@ -11,17 +11,19 @@
 $languageStrings = array(
 	'CaseManagement' => 'Cases',
 	'SINGLE_CaseManagement' => 'Case',
-	'General Information' => '',
-	'System Information' => '',
+	'LBL_BLOCK_GENERAL_INFORMATION' => 'General Information',
+	'LBL_BLOCK_SYSTEM_INFORMATION' => 'System Information',
+	'LBL_BLOCK_OTHER_CASES' => 'Other Related Cases',
 	'LBL_CASE_NUMBER' => 'Case Number',
 	'LBL_CLIENT' => 'Client',
+	'LBL_SUBJECT' => 'Subject',
 	'LBL_CASE_STATUS' => 'Case Status',
 	'LBL_CASE_OPENED' => 'Date Case Opened',
-	'LBL_SUBJECT' => 'Subject',
+	'LBL_RELATED_CASES' => 'Related Cases',
 	'View History' => '',
 	'RELATED_SUBJECTS' => 'Related Subjects',
-	'LBL_BLOCK_GENERAL_INFORMATION' => '',
-	'LBL_BLOCK_SYSTEM_INFORMATION' => '',
+	'General Information' => '',
+	'System Information' => '',
 
 );
 

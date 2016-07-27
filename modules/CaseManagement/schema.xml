@@ -5,17 +5,20 @@
 			<name>vtiger_casemanagement</name>
 			<sql><![CDATA[CREATE TABLE `vtiger_casemanagement` (
     `casemanagementid` int(11) NOT NULL DEFAULT '0',
-      `case_number` VARCHAR(32) DEFAULT NULL,
+      `related_cases` INT(19) DEFAULT NULL,
+    `case_number` VARCHAR(32) DEFAULT NULL,
+    `subject` INT(19) DEFAULT NULL,
     `case_opened` DATE DEFAULT NULL,
     `client` INT(19) DEFAULT NULL,
+    `case_status` VARCHAR(128) DEFAULT NULL,
       PRIMARY KEY (`casemanagementid`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
 		</table>
 		<table>
 			<name>vtiger_casemanagementcf</name>
 			<sql><![CDATA[CREATE TABLE `vtiger_casemanagementcf` (
-  `casemanagementid` int(11) NOT NULL,
-  PRIMARY KEY (`casemanagementid`)
+  `vtiger_casemanagementcf` int(11) NOT NULL,
+  PRIMARY KEY (`vtiger_casemanagementcf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
 		</table>
 	</tables>
